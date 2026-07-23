@@ -1,0 +1,19 @@
+Item,Quantity,Stage,Notes
+Seeed Studio XIAO ESP32-S3,1,Required,Host MCU
+Seeed Studio Wio-SX1262 bare module,1,Required,SX1262 radio module
+Matched 868/915 MHz antenna,1,Required,Match configured legal region and attach before transmit
+Wio-SX1262 breakout/carrier PCB,1,Required,Bare module cannot plug directly into a breadboard
+Normally-closed roller-lever microswitch,1,Required,Fence-tension input
+3.3 V-compatible PIR motion sensor,1,Required,Active-high output preferred
+Extension spring,1,Required,Mechanical tension mechanism
+Fence wire clamp,1,Required,Use fencing-rated hardware
+Lever arm and pivot hardware,1,Required,Adjustable trigger geometry
+Weather-resistant sensor enclosure,1,Field test,Protect switch mechanism
+Weather-resistant electronics enclosure,1,Field test,Protect radio electronics
+Cable glands,2-3,Field test,Strain relief and weather sealing
+100 uF electrolytic capacitor,1,Required,Place near radio supply
+100 nF ceramic capacitor,2,Required,Radio decoupling and optional switch filtering
+1 kOhm resistor,1,Recommended,Fence input protection
+Two-conductor UV-resistant cable,As needed,Field test,Sensor to electronics enclosure
+Breadboard and jumper wires,1,Bench only,Not suitable for outdoor deployment
+Protected battery pack or USB power,1,Bench/field,Confirm voltage regulation and current capability

@@ -1,0 +1,65 @@
+name: GateWatch CI
+
+on:
+  workflow_dispatch:
+    inputs:
+      meshtastic_ref:
+        description: Meshtastic branch, tag, or commit
+        required: true
+        default: master
+  push:
+  pull_request:
+
+jobs:
+  repository-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify repository and simulator
+        run: python3 scripts/verify-repository.py
+
+  smoke-test-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install PlatformIO
+        run: python3 -m pip install platformio
+      - name: Build standalone transmitter and receiver
+        working-directory: firmware/radio_sensor_smoke_test
+        run: |
+          pio run -e gatewatch-smoke-tx
+          pio run -e gatewatch-smoke-rx
+
+  meshtastic-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out GateWatch
+        uses: actions/checkout@v4
+      - name: Check out Meshtastic
+        uses: actions/checkout@v4
+        with:
+          repository: meshtastic/firmware
+          ref: ${{ github.event.inputs.meshtastic_ref || 'master' }}
+          submodules: recursive
+          path: meshtastic-firmware
+      - name: Apply GateWatch overlay
+        run: python3 firmware/meshtastic-overlay/scripts/apply_overlay.py meshtastic-firmware
+      - name: Install PlatformIO
+        run: python3 -m pip install platformio
+      - name: Build GateWatch Meshtastic firmware
+        working-directory: meshtastic-firmware
+        run: pio run -e gatewatch-xiao-s3
+      - name: Upload firmware artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: gatewatch-xiao-s3-firmware
+          path: |
+            meshtastic-firmware/.pio/build/gatewatch-xiao-s3/*.bin
+            meshtastic-firmware/.pio/build/gatewatch-xiao-s3/*.elf
+            meshtastic-firmware/.pio/build/gatewatch-xiao-s3/*.map

@@ -1,0 +1,27 @@
+GATEWATCH — WINDOWS PUSH STEPS
+
+1. Extract this ZIP to your Windows Downloads folder.
+2. Open PowerShell inside the extracted GateWatch-GitHub-Ready-v0.3.0 folder.
+3. Run:
+
+   Set-ExecutionPolicy -Scope Process Bypass
+   .\scripts\push-to-github.ps1
+
+The script will:
+- clone the existing https://github.com/Shanker511/GateWatch repository into a temporary working folder
+- copy this package over the existing repository files
+- run the simulator tests
+- create a real Git commit
+- push the commit to the main branch
+
+GitHub may open a browser or request credentials. Sign in with the GitHub account that owns Shanker511/GateWatch.
+
+If Git says your identity is not configured, run these commands once and rerun the script:
+
+   git config --global user.name "Gareth Erwin"
+   git config --global user.email "YOUR_GITHUB_EMAIL"
+
+IMPORTANT:
+- The ten generated images are clearly labeled as concept renderings.
+- Add real prototype photos and test evidence as soon as hardware testing begins.
+- GitHub Actions will attempt the standalone smoke-test build and the Meshtastic overlay build after the push.

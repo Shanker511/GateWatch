@@ -1,0 +1,34 @@
+name: Firmware or hardware bug
+description: Report a reproducible GateWatch problem
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: input
+    id: commit
+    attributes:
+      label: GateWatch commit or version
+    validations:
+      required: true
+  - type: input
+    id: hardware
+    attributes:
+      label: Hardware revision
+      description: XIAO model, Wio module revision, antenna, and sensor models
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior and serial log
+    validations:
+      required: true
+  - type: textarea
+    id: wiring
+    attributes:
+      label: Wiring changes from docs/WIRING.md
