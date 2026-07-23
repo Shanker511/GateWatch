@@ -129,22 +129,9 @@ python -m unittest discover -s simulator -v
 
 The overlay targets the current upstream Meshtastic source tree and is built by GitHub Actions. Until the workflow passes and real hardware is tested, treat this as development firmware rather than a finished release.
 
-## Safety boundary
 
-GateWatch does **not** connect directly to an energized electric-fence conductor. The prototype uses an isolated mechanical tension switch. Direct electric-fence monitoring requires galvanic isolation, surge protection, and a purpose-built pulse-sensing front end.
 
-## Competition evidence still required
 
-The repository already contains code, design documentation, and concept materials. It still needs:
-
-- at least three real high-resolution prototype photos
-- a demonstration video
-- serial output or application screenshots
-- measured range and packet results
-- power-consumption observations
-- documented failures and corrections
-
-See [`SUBMISSION_CHECKLIST.md`](SUBMISSION_CHECKLIST.md).
 
 ## License
 
