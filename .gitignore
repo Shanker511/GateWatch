@@ -21,3 +21,7 @@ Thumbs.db
 
 # Test evidence generated locally
 serial-logs/
+
+# Dashboard runtime/private land data
+dashboard/data/state.json
+dashboard/data/*.tmp
