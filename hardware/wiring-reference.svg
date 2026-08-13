@@ -1,51 +1,60 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
-  <rect width="1400" height="900" fill="#ffffff"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="980" viewBox="0 0 1400 980">
+  <rect width="1400" height="980" fill="#ffffff"/>
   <style>
     .title{font:700 42px Arial;fill:#1f2933}.sub{font:400 20px Arial;fill:#385b3f}
     .box{fill:#f7f9f7;stroke:#315f3b;stroke-width:3;rx:18}.head{font:700 26px Arial;fill:#1f2933}
     .txt{font:400 20px Arial;fill:#1f2933}.pin{font:700 19px monospace;fill:#1f2933}
-    .wire{stroke:#315f3b;stroke-width:5;fill:none}.sensor{stroke:#b42318;stroke-width:5;fill:none}
+    .wire{stroke:#315f3b;stroke-width:5;fill:none}.sensor{stroke:#b42318;stroke-width:5;fill:none}.env{stroke:#2878a8;stroke-width:5;fill:none}
   </style>
-  <text x="60" y="70" class="title">GateWatch Prototype Wiring Reference</text>
-  <text x="60" y="105" class="sub">XIAO ESP32-S3 + bare Wio-SX1262 + NC fence switch + 3.3 V PIR</text>
+  <text x="60" y="70" class="title">GateWatch Sentinel Wiring Reference</text>
+  <text x="60" y="105" class="sub">XIAO ESP32-S3 + bare Wio-SX1262 + DHT11 + NC fence switch + 3.3 V PIR</text>
 
-  <rect x="90" y="170" width="430" height="600" class="box"/>
-  <text x="220" y="220" class="head">XIAO ESP32-S3</text>
-  <text x="130" y="280" class="pin">D1 / GPIO2  → Wio DIO1</text>
-  <text x="130" y="325" class="pin">D2 / GPIO3  → Wio NRST</text>
-  <text x="130" y="370" class="pin">D3 / GPIO4  → Wio BUSY</text>
-  <text x="130" y="415" class="pin">D4 / GPIO5  → Wio NSS/CS</text>
-  <text x="130" y="460" class="pin">D5 / GPIO6  → Wio RF_SW</text>
-  <text x="130" y="505" class="pin">D8 / GPIO7  → Wio SCK</text>
-  <text x="130" y="550" class="pin">D9 / GPIO8  → Wio MISO</text>
-  <text x="130" y="595" class="pin">D10/GPIO9  → Wio MOSI</text>
-  <text x="130" y="650" class="pin">D6 / GPIO43 → Fence NC</text>
-  <text x="130" y="695" class="pin">D7 / GPIO44 → PIR OUT</text>
-  <text x="130" y="740" class="pin">3V3 / GND   → Shared power</text>
+  <rect x="70" y="150" width="470" height="650" class="box"/>
+  <text x="225" y="200" class="head">XIAO ESP32-S3</text>
+  <text x="110" y="250" class="pin">D0 / GPIO1  → DHT11 DATA</text>
+  <text x="110" y="295" class="pin">D1 / GPIO2  → Wio DIO1</text>
+  <text x="110" y="340" class="pin">D2 / GPIO3  → Wio NRST</text>
+  <text x="110" y="385" class="pin">D3 / GPIO4  → Wio BUSY</text>
+  <text x="110" y="430" class="pin">D4 / GPIO5  → Wio NSS/CS</text>
+  <text x="110" y="475" class="pin">D5 / GPIO6  → Wio RF_SW</text>
+  <text x="110" y="520" class="pin">D8 / GPIO7  → Wio SCK</text>
+  <text x="110" y="565" class="pin">D9 / GPIO8  → Wio MISO</text>
+  <text x="110" y="610" class="pin">D10/GPIO9  → Wio MOSI</text>
+  <text x="110" y="665" class="pin">D6 / GPIO43 → Fence NC</text>
+  <text x="110" y="710" class="pin">D7 / GPIO44 → PIR OUT</text>
+  <text x="110" y="760" class="pin">3V3 / GND   → Shared power</text>
 
-  <rect x="800" y="170" width="500" height="410" class="box"/>
-  <text x="940" y="220" class="head">Wio-SX1262</text>
-  <text x="850" y="280" class="txt">3.3 V supply only</text>
-  <text x="850" y="325" class="txt">Matched antenna attached before transmit</text>
-  <text x="850" y="370" class="txt">100 µF + 100 nF near VCC/GND</text>
-  <text x="850" y="415" class="txt">Short SPI wiring and solid common ground</text>
-  <text x="850" y="475" class="txt">DIO2: internal RF switch</text>
-  <text x="850" y="520" class="txt">DIO3: 1.8 V TCXO control</text>
+  <rect x="800" y="150" width="500" height="390" class="box"/>
+  <text x="940" y="200" class="head">Wio-SX1262</text>
+  <text x="850" y="255" class="txt">3.3 V supply only</text>
+  <text x="850" y="300" class="txt">Matched antenna attached before transmit</text>
+  <text x="850" y="345" class="txt">100 µF + 100 nF near VCC/GND</text>
+  <text x="850" y="390" class="txt">Short SPI wiring and solid common ground</text>
+  <text x="850" y="450" class="txt">DIO2: internal RF switch</text>
+  <text x="850" y="495" class="txt">DIO3: 1.8 V TCXO control</text>
 
-  <rect x="720" y="650" width="260" height="150" class="box"/>
-  <text x="760" y="700" class="head">Fence switch</text>
-  <text x="750" y="745" class="txt">NC → D6/GPIO43</text>
-  <text x="750" y="780" class="txt">COM → GND</text>
+  <rect x="610" y="620" width="235" height="170" class="box"/>
+  <text x="675" y="665" class="head">DHT11</text>
+  <text x="640" y="710" class="txt">DATA → D0/GPIO1</text>
+  <text x="640" y="745" class="txt">VCC → 3V3</text>
+  <text x="640" y="780" class="txt">GND → common</text>
 
-  <rect x="1040" y="650" width="260" height="150" class="box"/>
-  <text x="1110" y="700" class="head">PIR</text>
-  <text x="1070" y="745" class="txt">OUT → D7/GPIO44</text>
-  <text x="1070" y="780" class="txt">VCC 3V3, GND common</text>
+  <rect x="875" y="620" width="235" height="170" class="box"/>
+  <text x="900" y="665" class="head">Fence switch</text>
+  <text x="900" y="720" class="txt">NC → D6/GPIO43</text>
+  <text x="900" y="760" class="txt">COM → GND</text>
 
-  <path d="M520 330 C650 330 680 300 800 300" class="wire"/>
-  <path d="M520 430 C650 430 680 400 800 400" class="wire"/>
-  <path d="M520 650 C620 650 650 700 720 700" class="sensor"/>
-  <path d="M520 695 C760 695 820 700 1040 700" class="sensor"/>
+  <rect x="1140" y="620" width="210" height="170" class="box"/>
+  <text x="1200" y="665" class="head">PIR</text>
+  <text x="1160" y="720" class="txt">OUT → D7/GPIO44</text>
+  <text x="1160" y="760" class="txt">VCC 3V3, GND</text>
 
-  <text x="60" y="860" class="sub">Authoritative reference: docs/WIRING.md. Concept images are not wiring diagrams.</text>
+  <path d="M540 340 C650 340 690 285 800 285" class="wire"/>
+  <path d="M540 475 C650 475 690 390 800 390" class="wire"/>
+  <path d="M540 250 C580 250 570 690 610 690" class="env"/>
+  <path d="M540 665 C700 665 760 695 875 695" class="sensor"/>
+  <path d="M540 710 C820 710 930 695 1140 695" class="sensor"/>
+
+  <text x="60" y="900" class="sub">Base node uses only the Wio-SX1262 radio wiring. Both Sentinel nodes use all three sensors shown.</text>
+  <text x="60" y="940" class="sub">Authoritative reference: docs/WIRING.md. Concept images are not wiring diagrams.</text>
 </svg>
