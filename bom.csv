@@ -1,0 +1,23 @@
+Item,Quantity,Node,Stage,Notes
+Seeed Studio XIAO ESP32-S3,3,Base + 2 Sentinels,Required,Host MCU
+Seeed Studio Wio-SX1262 bare module,3,Base + 2 Sentinels,Required,SX1262 Meshtastic radio
+Matched 868/915 MHz antenna,3,Base + 2 Sentinels,Required,Match configured legal region and attach before transmit
+Wio-SX1262 breakout/carrier PCB,3,Base + 2 Sentinels,Required,Bare module cannot plug directly into a breadboard
+Normally-closed roller-lever microswitch,2,Sentinels,Required,Fence-tension input
+3.3 V-compatible PIR motion sensor,2,Sentinels,Required,Active-high output preferred
+DHT11 temperature/humidity module,2,Sentinels,Required,Use a vented shaded chamber
+4.7-5.1 kOhm resistor,2,Sentinels,Conditional,Required for bare four-pin DHT11; many modules include it
+Extension spring,2,Sentinels,Required,Mechanical tension mechanism
+Fence wire clamp,2,Sentinels,Required,Use fencing-rated hardware
+Lever arm and pivot hardware,2,Sentinels,Required,Adjustable trigger geometry
+Weather-resistant sensor enclosure,2,Sentinels,Field test,Protect switch mechanism
+Weather-resistant electronics enclosure,2,Sentinels,Field test,Protect radio electronics
+Vented DHT11 radiation shield or chamber,2,Sentinels,Field test,Protect from rain and direct sun while allowing airflow
+Cable glands,6-8,Sentinels,Field test,Strain relief and weather sealing
+100 uF electrolytic capacitor,3,Base + 2 Sentinels,Required,Place near each radio supply
+100 nF ceramic capacitor,6,Base + 2 Sentinels,Required,Radio decoupling plus DHT11 supply filtering
+1 kOhm resistor,2,Sentinels,Recommended,Fence input protection
+Two-conductor UV-resistant cable,As needed,Sentinels,Field test,Sensor to electronics enclosure
+Breadboard and jumper wires,3,Bench only,Bench only,Not suitable for outdoor deployment
+USB power supply,1,Base,Required,Continuous dashboard bridge power
+Protected battery pack or USB power,2,Sentinels,Bench/field,Confirm voltage regulation and current capability
